@@ -7,7 +7,7 @@
 </head>
 <body>
     {% for image in image_list %}
-    <img src="{{ url_for('static', filename=image) }}" width="500" height="600" class="image">
+    <img src="{{ url_for('image_show', filename=image) }}" width="500" height="600" class="image">
     {% endfor %}
 </body>
 </html>

@@ -11,18 +11,15 @@ def home():
     return render_template('index.html', image_list=image_list)
 
 
-image_folder_directory = Path("D:\Projects\Recovery\Recovered\LOONA")
+image_folder_directory = Path("D:\Projects\Recovery\Aespa\Savage")
 
-
-@app.route('/static/<path:filename>')
-def static_files(filename):
+@app.route('/<filename>')
+def image_show(filename):
     return send_from_directory(image_folder_directory, filename)
 
 if __name__ == "__main__":
 
     print("Hello World")
-
-    
 
     for file in image_folder_directory.iterdir():
         print(file)
