@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Document</title>
 </head>
 <body>
-    {% for image in image_list %}
-    <img src="{{ url_for('image_show', filename=image) }}" width="500" height="600" class="image">
+    {% for row in row_list %}
+        <div class="row-container">
+            {% for image in row %}
+                <img src="{{ url_for('image_show', filename=image) }}" class="row-image">
+            {% endfor %}
+        </div>
     {% endfor %}
 </body>
 </html>

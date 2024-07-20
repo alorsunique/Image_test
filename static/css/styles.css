@@ -1,0 +1,19 @@
+.row-container {
+    text-align: center;
+    width: 50%;
+
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 255, 255, .15);
+    backdrop-filter: blur(10px);
+
+}
+
+.row-image {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0%;
+}
+
