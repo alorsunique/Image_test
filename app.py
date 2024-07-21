@@ -67,11 +67,17 @@ def home():
 
 
 
-image_folder_directory = Path("D:\Projects\Recovery\Aespa Lead")
+
 
 @app.route('/<filename>')
 def image_show(filename):
     return send_from_directory(image_folder_directory, filename)
 
 if __name__ == "__main__":
+    #image_folder_directory = Path("D:\Projects\Wallpaper Project\To Upscale")
+    image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))
+    
+    print(f"Directory: {image_folder_directory}")
+
     app.run(debug=True)
+    
