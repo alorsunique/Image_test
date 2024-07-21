@@ -1,28 +1,28 @@
 console.log('Hello World');
 
 function bruhMoment() {
-    console.log(this.src)
+    //console.log(this.src)
     alert("Bruh Moment");
+    console.log("Bruh Moment")
 }
 
-function note_image() {
-    const image_box = document.getElementsByClassName("row-image");
-    //console.log(image_box);
-    console.log("Here")
-    return image_box
+function initialize_image_list(){
+    image_set = document.querySelectorAll(".row-image");
+    return image_set
 }
 
-document.addEventListener("DOMContentLoaded", note_image);
+function add_image_listener(image_set){
+    image_set.forEach(element => {
+        // console.log(element)
+        element.addEventListener('click',bruhMoment)
+    });
+}
 
-console.log(image_box)
-
-
-
-
-image_box.array.forEach(element => {
-    element.addEventListener('click',bruhMoment)
-});
-
+function startup(){
+    image_set = initialize_image_list();
+    // console.log(image_set)
+    add_image_listener(image_set);
+}
 
 //image_box[0].addEventListener("click", bruhMoment());
 
