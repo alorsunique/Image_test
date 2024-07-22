@@ -1,9 +1,35 @@
 console.log('Hello World');
 
+clicked_image = []
+
+function change_image_property(image_id) {
+    //document.getElementById(image_id).style.opacity = 0.5;
+    document.getElementById(image_id).classList.add('test_class');
+
+}
+
 function bruhMoment() {
     //console.log(this.src)
-    alert("Bruh Moment");
-    console.log("Bruh Moment")
+    // alert("Bruh Moment");
+    console.log("Bruh Moment");
+    //console.log(this.id)
+
+    if (clicked_image.includes(this.id)){
+        console.log("Element was present")
+
+
+        index = clicked_image.indexOf(this.id);
+        if (index !== -1) {
+            clicked_image.splice(index, 1);
+        }
+
+    }else{
+        console.log("Element was absent")
+        clicked_image.push(this.id)
+    }
+
+    change_image_property(this.id);
+    console.log(clicked_image.length)
 }
 
 function initialize_image_list(){
@@ -23,10 +49,4 @@ function startup(){
     // console.log(image_set)
     add_image_listener(image_set);
 }
-
-//image_box[0].addEventListener("click", bruhMoment());
-
-//image_box.addEventListener("click", bruhMoment());
-
-//document.getElementsByClassName("row-image").addEventListener("click", bruhMoment());
 

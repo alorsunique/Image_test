@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 from pathlib import Path
 
 app = Flask(__name__)
@@ -63,11 +63,6 @@ def home():
     print(image_row_list)
 
     return render_template('index.html', row_list=image_row_list)
-
-
-
-
-
 
 @app.route('/<filename>')
 def image_show(filename):
