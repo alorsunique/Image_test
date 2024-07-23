@@ -50,3 +50,21 @@ function startup(){
     add_image_listener(image_set);
 }
 
+function send_list(){
+
+    list_dict_values = {clicked_image}
+    json_list = JSON.stringify(list_dict_values)
+
+    console.log(json_list)
+
+    fetch("/data", {
+        method: "POST",
+        body: json_list,
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+    })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+}

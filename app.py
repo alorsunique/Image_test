@@ -1,5 +1,6 @@
 from flask import Flask, render_template, send_from_directory, request
 from pathlib import Path
+import json
 
 app = Flask(__name__)
 
@@ -68,9 +69,21 @@ def home():
 def image_show(filename):
     return send_from_directory(image_folder_directory, filename)
 
+
+@app.route('/data', methods=['POST'])
+def data_show():
+    data = request.get_json()
+    print(data)
+    print(type(data))
+
+    print(data['clicked_image'])
+
+    return data
+
+
 if __name__ == "__main__":
-    #image_folder_directory = Path("D:\Projects\Wallpaper Project\To Upscale")
-    image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))
+    image_folder_directory = Path("D:\Projects\Recovery\IVE\Eleven")
+    #image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))
     
     print(f"Directory: {image_folder_directory}")
 
