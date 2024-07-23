@@ -2,6 +2,9 @@ from flask import Flask, render_template, send_from_directory, request
 from pathlib import Path
 import json
 
+import time
+from datetime import datetime
+
 app = Flask(__name__)
 
 
@@ -76,7 +79,29 @@ def data_show():
     print(data)
     print(type(data))
 
+    print(data["title"])
+    print(len(data["title"]))
     print(data['clicked_image'])
+
+    image_list = data['clicked_image']
+
+    time_filter = datetime.now()
+    time_filter = time_filter.strftime("%Y%m%d_%H%M%S")
+    
+    if not len(data['title']) == 0:
+        output_name = f"{data['title']}_{time_filter}"
+    else:
+        output_name = time_filter
+
+
+
+    print(output_name)
+
+    for entry in image_list:
+        print(entry)
+
+    with open(f"{output_name}.json","w") as content:
+        json.dump(data, content)
 
     return data
 

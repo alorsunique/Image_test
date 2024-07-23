@@ -52,7 +52,9 @@ function startup(){
 
 function send_list(){
 
-    list_dict_values = {clicked_image}
+    title = prompt("Set Title")
+
+    list_dict_values = {title,clicked_image}
     json_list = JSON.stringify(list_dict_values)
 
     console.log(json_list)
