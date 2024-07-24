@@ -106,6 +106,10 @@ def data_show():
     return data
 
 
+@app.route('/test')
+def test_page():
+    return render_template('test.html')
+
 if __name__ == "__main__":
     image_folder_directory = Path("D:\Projects\Recovery\IVE\Eleven")
     #image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))

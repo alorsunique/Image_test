@@ -70,3 +70,12 @@ function send_list(){
     .then((json) => console.log(json));
 
 }
+
+
+function send_directory(){
+
+    value = document.getElementById('dir_box').value
+
+    console.log(value)
+
+}
