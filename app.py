@@ -111,10 +111,10 @@ def test_page():
     return render_template('test.html')
 
 if __name__ == "__main__":
-    image_folder_directory = Path("D:\Projects\Recovery\IVE\Eleven")
-    #image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))
+    #image_folder_directory = Path("D:\Projects\Recovery\IVE\Eleven")
+    image_folder_directory = Path(str(input(f"Path: ")).replace('"', ''))
     
     print(f"Directory: {image_folder_directory}")
 
     app.run(debug=True)
-    
+     

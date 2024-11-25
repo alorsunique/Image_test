@@ -11,7 +11,9 @@
     {% for row in row_list %}
         <div class="row-container">
             {% for image in row %}
-                <img src="{{ url_for('image_show', filename=image) }}" class="row-image" id="{{image}}">
+                <div class="row-image-box">
+                    <img src="{{ url_for('image_show', filename=image) }}" class="row-image" id="{{image}}">
+                </div>
             {% endfor %}
         </div>
     {% endfor %}
